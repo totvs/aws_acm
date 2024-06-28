@@ -8,7 +8,7 @@ resource "aws_acm_certificate" "certificate" {
 }
 
 data "aws_route53_zone" "hz" {
-  name         = var.zone_domain_name_private
+  name         = var.zone_domain_name
   private_zone = false
 }
 
@@ -32,7 +32,7 @@ resource "aws_route53_record" "record" {
 }
 
 data "aws_route53_zone" "hz_private" {
-  name         = var.zone_domain_name
+  name         = var.zone_domain_name_private
   private_zone = true
 }
 
